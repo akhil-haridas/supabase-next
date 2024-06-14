@@ -33,5 +33,6 @@ export type Subscriber = {
 } & CommonFields;
 
 export type User = {
+    dark_mode: boolean;
     email: string;
 } & CommonFields;
