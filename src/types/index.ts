@@ -5,9 +5,11 @@ type CommonFields = {
 
 export const CompaignStatusArray  = ['Draft', 'Sent', 'Archived'];
 export const EmailStatusArray  = ['Draft', 'Completed'];
+export const SubscriberStatusArray  = ['Active', 'Inactive', 'Completed'];
 
 type CompaignStatus = typeof CompaignStatusArray[number]
 type EmailStatus = typeof EmailStatusArray[number]
+type SubscriberStatus = typeof SubscriberStatusArray[number]
 
 export type Compaign = {
     name: string;
@@ -26,7 +28,10 @@ export type Email = {
 
 export type Subscriber = {
     email: string;
-    user_id: string;
+    owner_id: string;
+    status: SubscriberStatus;
 } & CommonFields;
 
-export type User = {} & CommonFields;
+export type User = {
+    email: string;
+} & CommonFields;
