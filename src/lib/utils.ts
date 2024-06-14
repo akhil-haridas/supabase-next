@@ -1,0 +1,1 @@
+// all the basic functions for the app
