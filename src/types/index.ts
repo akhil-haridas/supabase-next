@@ -1,4 +1,4 @@
-.type CommonFields = {
+..type CommonFields = {
     id?: string;
     created_at?: string;
 }
