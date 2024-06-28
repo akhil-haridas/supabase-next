@@ -5,13 +5,14 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 interface IAppContext {
     user: User | undefined;
+    supabase: any;
 }
 
 const AppContext = createContext<IAppContext | undefined>(undefined)
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
 
-    const supabae = createClient(
+    const supabase = createClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL!,
         process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY!
     )
@@ -36,7 +37,7 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
 
     if(loading) return <div>Loading....</div>
 
-    return <AppContext.Provider value={{ user }}>
+    return <AppContext.Provider value={{ user, supabase }}>
         {children}
     </AppContext.Provider>
 }
