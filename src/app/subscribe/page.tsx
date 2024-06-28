@@ -1,6 +1,5 @@
 export default function Subscribe() {
     return (
-        <div>Subscribe</div>
+        <div>Subscribe : free for everybody</div>
     );
-  }
-  
+}
