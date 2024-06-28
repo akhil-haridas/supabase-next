@@ -20,6 +20,7 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
                 
             } catch (error) {
                 //Handle error 
+                console.log(error)
             } finally {
                 setLoading(false)
             }
